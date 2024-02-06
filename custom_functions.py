@@ -1,7 +1,5 @@
 from Letter import Letter
 
-_letter_list = [Letter('a')]
-
 def remove_file_from_path(file_path, new_file_name):
     x = file_path.split('/')
     x.pop()
@@ -22,6 +20,8 @@ def count_lines(path):
     return total_letters
 
 def count_letters(line, total_letters):   
+    _letter_list = [Letter()]
+
     for word in line:
         for letter in word.lower().strip():    
             l = Letter(letter)
@@ -34,8 +34,8 @@ def count_letters(line, total_letters):
                 letter_from_list.__iterate__()
             else:
                 _letter_list.append(l)    
-
-    _letter_list.sort(reverse=True, key=sort_by(lambda x: x.iterator))
+    
+    _letter_list.sort(reverse=True, key=(lambda x: x.iterator))
     i = 0
     for letter in _letter_list:
        print(_letter_list[i].letter, ' | '
@@ -43,7 +43,3 @@ def count_letters(line, total_letters):
              , round(((_letter_list[i].iterator/total_letters) * 100), 2),'%' )
        i+=1
 
-    return 0
-       
-def sort_by(value):
-    return value

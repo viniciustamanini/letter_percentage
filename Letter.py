@@ -2,7 +2,7 @@ class Letter:
     letter = ""
     iterator = 0
 
-    def __init__(self, letter):
+    def __init__(self, letter = None):
         self.letter = letter
         self.iterator+= 1
 
