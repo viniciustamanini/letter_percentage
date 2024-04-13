@@ -15,13 +15,12 @@ new_file = open(path, 'w')
 
 lines = file.readlines()
 
-aux = 0
 for val in lines: 
-    if len(val) == 6:
+    if bool(custom_functions.word_has_five_letters(val.rstrip())):
         new_file.write(val)
-        aux+=1
 new_file.close()
 
 custom_functions.count_lines(path)
-print('Zenilton C Cardoso')
+
 file.close()
+
